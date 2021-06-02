@@ -1,0 +1,127 @@
+
+<div class="container">
+    <table *ngIf="bookings" class="table  table-bordered table-striped table-hover table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Booking Id</th>
+                <!-- <th scope="col">Booked from</th>
+                <th scope="col">Booked To</th>
+                <th scope="col">No Of Adults</th>
+                <th scope="col">No Of Children</th>
+                <th scope="col">Hotel Id</th>
+                <th scope="col">Room Id</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of bookings">
+
+                <th scope="row">{{b.bookingId}}</th>
+                <th scope="row">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <button (click)='removeBooking(b.bookingId)' type="button" class="btn btn-outline-danger">Delete</button>
+                        <button (click)='bookingDetail(b.bookingId)' type="button" class="btn btn-outline-info">detail</button>
+                        <button (click)='editButton(b.bookingId)' type="button" class="btn btn-outline-primary">Edit</button>
+                    </div>
+                </th>
+        </tbody>
+
+    </table>
+
+
+<hr>
+
+
+<div *ngIf="detail===true">
+    <table class="table  table-bordered table-striped table-hover table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Booking Id</th>
+                <th scope="col">Booked from</th>
+                <th scope="col">Booked To</th>
+                <th scope="col">No Of Adults</th>
+                <th scope="col">No Of Children</th>
+                <th scope="col">Hotel Id</th>
+                <th scope="col">Room Id</th>
+                <th scope="col">Total Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{booking.bookingId}}</th>
+                <th scope="row">{{booking.bookedFrom}}</th>
+                <th scope="row">{{booking.bookedTo}}</th>
+                <th scope="row">{{booking.noOfAdults}}</th>
+                <th scope="row">{{booking.noOfChildren}}</th>
+                <th scope="row">{{booking.hotelId}}</th>
+                <th scope="row">{{booking.roomId}}</th>
+                <th scope="row">{{booking.totalamount}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+
+<div *ngIf="edit===true">
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Update Booking Details</h2>
+    <form [formGroup]="addForm" (ngSubmit)="editBooking()">
+        <div class="form-group">
+            <label for="bookingId">Booking ID:</label>
+            <input formControlName="bookingId"  [(ngModel)]="booking.bookingId" placeholder="Enter BookingId" name="bookingId" class="form-control"
+                id="bookingId"/>
+            <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookingId.errors">give Booking id</div>
+        </div>
+        <div class="form-group">
+            <label for="bookedFrom">Booking From:</label>
+            <input formControlName="bookedFrom" [(ngModel)]="booking.bookedFrom" placeholder="Enter from date" name="bookedfrom" class="form-control"
+                id="bookedfrom"/>
+            <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookedFrom.errors">Enter from date</div>
+        </div>
+        <div class="form-group">
+            <label for="bookedTo">Booked To:</label>
+            <input formControlName="bookedTo" [(ngModel)]="booking.bookedTo" placeholder="Enter to date" name="bookedto" class="form-control"
+                id="bookedto"/>
+            <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookedTo.errors">Enter to date </div>
+        </div>
+        <div class="form-group">
+            <label for="noOfAdults">No Of Adults:</label>
+            <input formControlName="noOfAdults" [(ngModel)]="booking.noOfAdults" placeholder="Enter no Of Adults" name="noOfAdults" class="form-control"
+                id="noOfAdults"/>
+            <div class="text-danger" *ngIf=" Submitted && addForm.controls.noOfAdults.errors">Enter no Of Adults</div>
+        </div>
+        <div class="form-group">
+            <label for="noOfChildren">No Of Children:</label>
+            <input formControlName="noOfChildren" [(ngModel)]="booking.noOfChildren" placeholder="Enter no Of Children" name="noOfChildren" class="form-control"
+                id="noOfChildren"/>
+            <div class="text-danger" *ngIf=" Submitted && addForm.controls.noOfChildren.errors">Enter no Of Children</div>
+        </div>
+        <div class="form-group">
+            <label for="hotelId">Hotel Id:</label>
+            <input formControlName="hotelId"  [(ngModel)]="booking.hotelId" name="hotelId" class="form-control"
+                id="hotelId" />
+            <div *ngIf=" Submitted && addForm.controls.hotelId.errors">Give hotel id</div>
+        </div> 
+        <div class="form-group">
+            <label for="roomId">Room Id:</label>
+            <input formControlName="roomId" [(ngModel)]="booking.roomId" name="roomId" class="form-control"
+                id="roomId" />
+            <div *ngIf=" Submitted && addForm.controls.roomId.errors">Give RoomId</div>
+        </div>
+        <div class="form-group">
+            <label for="totalAmount">Total Amount:</label>
+            <input formControlName="totalAmount" [(ngModel)]="booking.totalamount" name="totalAmount" class="form-control" id="totalAmount" />
+            <div *ngIf=" Submitted && addForm.controls.totalAmount.errors">Give RoomId</div>
+        </div>
+        <div class="form-group">
+            <label for="userId">user Id:</label>
+            <input  value="{{id}}" name="userId" class="form-control" id="userId" disabled/>
+            <!-- <div *ngIf=" Submitted && addForm.controls.userId.errors">Give userId</div> -->
+        </div>
+        <button class="btn btn-success">Add Data</button>
+    </form>
+</div>
+</div>
+
+
+ 
+

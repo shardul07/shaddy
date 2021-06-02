@@ -1,0 +1,49 @@
+
+<div class="container">
+<h1 style="text-align: center;">Room Details</h1>
+<table class="table table-bordered" *ngIf="rooms" align='center' border='1'>
+    <tr>
+        <th>availability</th>
+        <th>hotel id</th>
+        <th>ratePerDay</th>
+        <th>roomId</th>
+        <th>roomNo</th>
+        <th>roomType</th>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let room of rooms">
+        <td>{{ room.available }}</td> 
+        <td>{{ room.hotelId }}</td>
+        <td>{{ room.ratePerDay }}</td>
+        <td>{{ room.roomId }}</td>
+        <td>{{ room.roomNo }}</td>
+        <td>{{ room.roomType }}</td>
+        <td>
+            <button (click)='remove(room.roomId)'style="background-color: red;margin-right: 16px" >Delete&nbsp;</button>
+            <button (click)='detail(room.roomId)' style="background-color: turquoise;">Update details</button> 
+        </td>
+    </tr>
+</table>
+
+<form *ngIf="room.roomId>0"  (ngSubmit)="editRoom()">
+    <h1>Update The Room Details Here</h1>
+
+<div class="form-group">
+    <label for="available">Available</label>
+    <input type="text" class="form-control" id="available" required [(ngModel)]="room.available" name="available">
+  </div>
+  <div class="form-group">
+    <label for="ratePerDay">Rate Per Day For The Room</label>
+    <input type="text" class="form-control" id="ratePerDay" required [(ngModel)]="room.ratePerDay" name="ratePerDay">
+  </div>
+  <div class="form-group">
+    <label for="roomNo">Room Number</label>
+    <input type="text" class="form-control" id="description" required [(ngModel)]="room.roomNo" name="roomNo">
+  </div>
+  <div class="form-group">
+    <label for="roomType">Type of Room</label>
+    <input type="text" class="form-control" id="roomType" required [(ngModel)]="room.roomType" name="roomType">
+  </div>
+  <button type="submit" style="background-color: green;">Submit</button>
+</form>
+</div>

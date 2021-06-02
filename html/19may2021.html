@@ -1,0 +1,71 @@
+<!DOCTYPE html>  
+<html lang="en">  
+ <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head> 
+  <body>  
+ <div class="jumbotron text-center">
+  <h1>My Table Demo</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+ </div> 
+ 
+<div class="container">
+    <form>
+        div class="form-group">
+            <label for="userid">UserId:</label>
+            <input type="userid" class="form-control" id="userid" placeholder="Enter userid">
+          </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
+          </div>
+          <div class="form-group">
+            <label for="language">Language Known:</label>
+            <div class="checkbox-inline">
+              <label><input type="checkbox" value="Hindi">Hindi</label>
+            </div>
+            <div class="checkbox-inline">
+              <label><input type="checkbox" value="English">English</label>
+            </div>
+            <div class="checkbox-inline disabled">
+              <label><input type="checkbox" value="Bengali" disabled>Bengali</label>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <input type = "radio" name = "optionsRadios" id = "optionsRadios1" value = "option1" checked> Male
+              <input type = "radio" name = "optionsRadios" id = "optionsRadios2" value = "option2">Female
+              </div>
+              <div class="form-group">
+                <label for="sel2">Prefered Location:</label>
+                <select multiple class="form-control" id="loc">
+                    <option>Kolkata</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+                    <option>Chennai</option>
+                    <option>Bangalore</option>
+                    <option>Hydrabad</option>
+                </select>
+                </div>
+                <div class="custom-file">
+                  <label class="custom-file-label" for="customFile">Upload Resume:</label>
+                  <input type="file" class="custom-file-input" id="customFile">
+               </div>
+               <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" rows="3" id="comment"></textarea>
+              </div>
+              <button type="submit" class="btn btn-info btn-md ">Submit</button>
+          </div>
+    </form>
+</div>
+</body>
+</html>

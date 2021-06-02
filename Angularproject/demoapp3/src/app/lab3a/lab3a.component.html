@@ -1,0 +1,79 @@
+<div class="container">
+    <h2 class="text-center">Add Product</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+ 
+        <div class="form-group">
+            <label for="pid">Product Id:</label>
+            <input formControlName="pid" placeholder="pid" name="pid" class="form-control" id="pid">
+         <div *ngIf=" Submitted && addForm.controls.pid.errors">Give pid</div> </div>
+         
+         <div class="form-group">
+            <label for="pname">Product Name:</label>
+            <input formControlName="pname" placeholder="pname" name="pname" class="form-control" id="pname">
+         <div *ngIf=" Submitted && addForm.controls.pname.errors">Give pname</div>
+          </div>
+ 
+        <div class="form-group">
+            <label for="cost">Product Cost:</label>
+            <input formControlName="cost" placeholder="cost" name="cost" class="form-control" id="cost">
+          <div *ngIf=" Submitted && addForm.controls.cost.errors">Give cost</div>
+          </div>
+
+          <div class="form-group">
+            <label for="product">Product Online</label><br>
+            <input type="radio" formControlName="product" id="Yes" name="product" value="Yes">
+            <label for="Yes">Yes</label><br>
+            <input type="radio" formControlName="product" id="No" name="product" value="No">
+            <label for="No">No</label><br>
+            <div *ngIf=" Submitted && addForm.controls.product.errors">Give type</div>
+
+        </div>
+
+    
+
+
+        <div class="form-group">
+            <label for="category">Product Category:</label>
+            <select class="form-control" formControlName="category" id="category" name="category" >
+                <option *ngFor="let cat of categ" [value]="cat">{{cat}}</option>
+              </select>
+            <div *ngIf=" Submitted && addForm.controls.category.errors">select one</div> 
+        </div>
+
+
+
+     
+        <div class="form-group">
+            
+            <label for="available">Available in store:</label><br>
+            
+            <input type="checkbox" formControlName="available" id="Bigbazar" name="available" value="Bigbazar">
+            <label for="Bigbazar">Big bazar&nbsp;</label>
+            
+            <input type="checkbox" formControlName="available" id="Dmart" name="available" value="Dmart">
+            <label for="Dmart"> Dmart&nbsp;</label>
+            <input type="checkbox" formControlName="available" id="Reliance" name="available" value="Reliance">
+            <label for="Reliance">Reliance&nbsp;</label>
+            <input type="checkbox" formControlName="available" id="Megastore" name="available" value="Megastore">
+            <label for="Megastore">Mega store&nbsp;</label>
+            <div *ngIf=" Submitted && addForm.controls.available.errors">Give availability</div> 
+        
+        </div>
+ 
+        <!-- <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input formControlName="salary" placeholder="salary" name="salary" class="form-control" id="salary">
+         <div *ngIf=" Submitted && addForm.controls.salary.errors">Give salary</div>
+          </div>
+      
+          <div class="form-group">
+            <label for="experience">Experience:</label>
+            <input formControlName="experience" placeholder="experience" name="experience" class="form-control" id="experience">
+          <div *ngIf=" Submitted && addForm.controls.experience.errors">Give experience</div>
+          </div> -->
+      
+  
+ 
+      <button class="btn btn-success">Add Data</button>
+    </form>
+  </div>

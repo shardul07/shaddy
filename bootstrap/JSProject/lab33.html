@@ -1,0 +1,42 @@
+<HTML>
+    <HEAD>
+    <TITLE>Using typeof</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+      function findString(){
+          var str = document.getElementById('t1').value;
+          var char=document.getElementById('t2').value;
+          var str1 = document.getElementById('t3').value;
+
+          var a=str.match(char);
+          var b=str.substr(3,6);
+          var c=str1.toUpperCase();
+          document.write("The Actual String is  - "+str+"<br><br>");
+          document.write("The Character to be searched for("+char+")  is  - "+a+"<br><br>");
+          document.write("Result of str.substr(3,6) is - " +b+"<br><br>")
+          document.write("The upper case string is  -"+c+"<br><br>");
+      }
+      
+    </SCRIPT>
+    </HEAD>
+    <BODY>
+    
+        <form >
+        <table>
+     <tr>
+        <th>Enter the String</th>
+        <td><input type='String' name='t1' id='t1'></td>
+    </tr>
+    <tr>
+        <th>Enter the string to be searched </th>
+        <td><input type='char' name='t2' id='t2'></td>
+    </tr>
+    
+<tr>
+    <th>Enter the String to make UPPERCASE</th>
+    <td><input type='String' name='t3' id='t3'></td>
+</tr>
+<tr><th>
+    <button onclick="findString()">Search</button>
+</th>
+</tr>
+    </BODY>

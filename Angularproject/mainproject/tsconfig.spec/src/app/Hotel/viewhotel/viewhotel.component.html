@@ -1,0 +1,101 @@
+
+<div class="container">
+ <h1>Hotel Details</h1>
+  Search<input type='text' name="search" id="search" [(ngModel)]="search" >
+<table  class="table table-bordered" *ngIf="hotels" >
+    
+    <tr>
+        
+        <th>Hotel Name</th>
+        <th>City</th>
+        <th>Address</th>
+        <th>Buttons</th>
+      </tr>
+      
+     
+    <tr *ngFor="let h of hotels  | filter: search">
+        
+        <td>{{h.hotelName}}</td>
+        <td>{{h.city}}</td>
+        <td>{{h.address}}</td>
+        <td>
+            <button (click)='remove(h.hotelId)' style="background-color: red;">Delete</button>
+        
+         <button (click)='detailbutton(h.hotelId)' style="background-color: yellow;">details</button>
+         <button (click)='updatebutton(h.hotelId)' style="background-color: turquoise;">Update Hotel details</button></td>   
+        
+    </tr>
+</table>
+
+
+<div *ngIf="detail===true">
+<table  class="table table-bordered" *ngIf="hotel.hotelId>0" >
+    <tr>
+        
+        <th>Hotel Name</th>
+        <th>Description</th>
+        <th>Avg Rate</th>
+        <th>Phone 1</th>
+        <th> Phone 2</th>
+        <th>Email</th>
+        <th>Website</th>
+        
+        
+    </tr>
+    <tr >
+        
+        <td>{{hotel.hotelName}}</td>
+        <td>{{hotel.description}}</td>
+        <td>{{hotel.avgRatePerDay}}</td>
+        <td>{{hotel.phone1}}</td>
+        <td>{{hotel.phone2}}</td>
+        <td>{{hotel.email}}</td>
+        <td>{{hotel.website}}</td>
+    </tr>
+</table>
+</div>
+
+       <div *ngIf="edit===true"> 
+       <form *ngIf="hotel.hotelId>0"  (ngSubmit)="edithotel()">
+           <h1>Update The Hotel Details Here</h1>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="hotelName" required [(ngModel)]="hotel.hotelName" name="hotelName">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="hotel.city" name="city">
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" required [(ngModel)]="hotel.address" name="address">
+      </div>
+      <div class="form-group">
+        <label for="description">Hotel Description</label>
+        <input type="text" class="form-control" id="description" required [(ngModel)]="hotel.description" name="description">
+      </div>
+      <div class="form-group">
+        <label for="avgRatePerDay">Average Rate Per Day</label>
+        <input type="text" class="form-control" id="avgRatePerDay" required [(ngModel)]="hotel.avgRatePerDay" name="avgRatePerDay">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" required [(ngModel)]="hotel.email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="phone1">Phone1:</label>
+        <input type="text" class="form-control" id="phone1" required [(ngModel)]="hotel.phone1" name="phone1">
+      </div>
+      <div class="form-group">
+        <label for="phone2">Phone2:</label>
+        <input type="text" class="form-control" id="phone2" required [(ngModel)]="hotel.phone2" name="phone2">
+      </div>
+      <div class="form-group">
+        <label for="website">Website:</label>
+        <input type="text" class="form-control" id="website" required [(ngModel)]="hotel.website" name="website">
+      </div>
+    <button type="submit" style="background-color: green;">Update</button>
+    </form>
+
+  </div>
+  </div>

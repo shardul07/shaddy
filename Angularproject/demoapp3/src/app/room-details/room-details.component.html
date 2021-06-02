@@ -1,0 +1,65 @@
+<p>room-details works!</p>
+<div class="container"></div>
+<h1 style="text-align: center;">Room Details</h1>
+<table class="table table-bordered" *ngIf="rooms" align='center' border='1'>
+    <tr>
+        <th>availability</th>
+        <th>hotel id</th>
+        <th>ratePerDay</th>
+        <th>roomId</th>
+        <th>roomNo</th>
+        <th>roomType</th>
+    </tr>
+    <tr *ngFor="let room of rooms">
+        <td>{{ room.available }}</td> 
+        <td>{{ room.hotelId }}</td>
+        <td>{{ room.ratePerDay }}</td>
+        <td>{{ room.roomId }}</td>
+        <td>{{ room.roomNo }}</td>
+        <td>{{ room.roomType }}</td>
+    </tr>
+</table>
+<!--         <td>{{h.hotelName}}</td>
+           <td>{{h.city}}</td>
+           <td>{{h.address}}</td>
+           <td>
+               <button (click)='remove(h.hotelId)' style="background-color: red;">Delete</button>
+           
+            <button (click)='detail(h.hotelId)' style="background-color: yellow;">details</button>
+            <button (click)='detail(h.hotelId)' style="background-color: turquoise;">Update Hotel details</button></td>   
+           
+       </tr>
+   </table>
+   
+   <table  class="table table-bordered" *ngIf="hotel.hotelId>0" >
+       <tr>
+           
+           <th>Hotel Name</th>
+           <th>Description</th>
+           <th> Description</th>
+           <th>Avg Rate</th>
+           <th>Phone 1</th>
+           <th> Phone 2</th>
+           <th>Email</th>
+           <th>Website</th>
+           
+           
+       </tr>
+       <tr >
+           
+           <td>{{hotel.hotelName}}</td>
+           <td>{{hotel.description}}</td>
+           <td>{{hotel.description}}</td>
+           <td>{{hotel.avgRatePerDay}}</td>
+           <td>{{hotel.phone1}}</td>
+           <td>{{hotel.phone2}}</td>
+           <td>{{hotel.email}}</td>
+           <td>{{hotel.website}}</td>
+           
+           
+       </tr>
+   </table>
+   
+    
+          
+   -->

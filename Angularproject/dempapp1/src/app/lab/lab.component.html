@@ -1,0 +1,27 @@
+<p>lab Assignment</p>
+<table>
+    <tr>
+        <th>Employee Id:</th>
+        <td><input type="number" [(ngModel)]="id"/></td>
+    </tr>
+    
+    <tr>
+        <th>Employee Name:</th>
+        <td><input type="text" [(ngModel)]="name"/></td>
+    </tr>
+    
+    <tr>
+        <th>Employee Salary:</th>
+        <td><input type="number" [(ngModel)]="salary"/></td>
+    </tr>
+    
+    <tr>
+        <th>Employee Designation:</th>
+        <td><input type="text" [(ngModel)]="department"/></td>
+    </tr>
+    
+    <tr>
+    <button (click)="addEmployee()">Add Employee</button>
+    </tr>
+    <p>{{id}} {{name}} {{salary}} {{department}}</p>
+    </table>

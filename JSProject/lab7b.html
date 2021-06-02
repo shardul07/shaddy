@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            
+
+function find(){
+    
+    var a=document.getElementById('category').value;
+    if(a==="elec"){
+
+        var array=["Television","Laptop","Phone"];
+
+    }
+    else{
+
+        var array=["Soap","Powder"];
+
+    }
+    var string="";
+    for(i=0;i<array.length;i++){
+        string=string+"<option value="+array[i]+">"+array[i]+"</option>";
+    }
+    string="<select name='prod' id='pro'>"+string+"</select>";
+    document.getElementById('did1').innerHTML=string;
+    
+}
+
+
+
+function valid(){
+   // alert('Hello');
+            var result=true;
+            var did3 = document.getElementById('did3');  did3.innerHTML='';
+            var cat = document.getElementById('cat');  cat.innerHTML='';
+           // alert(did3);
+
+            
+            var quantity = document.getElementById('quantity').value;
+            
+            if(quantity=="" || quantity==null){
+             
+                did3.innerHTML='quantity  is missing...';
+                result =false;
+            }
+
+            var category = document.getElementById('category').value;
+           // alert(category);
+                if(category=="" || category==null){
+                    cat.innerHTML='Category  is missing...';
+                    result =false;
+                }
+            
+            return result;
+        }
+
+
+
+
+function calculate(){
+    var tabid = document.getElementById('tabid');
+    tabid.style.display = "none";
+  
+    var result=valid();
+            if(result==true){
+    
+        var tv_price = 20000;
+        var laptop_price = 30000;
+        var phone_price = 10000;
+        var soap_price =40;
+        var powder_price =90;
+        var quantity = document.getElementById("quantity").value;
+        var product = document.getElementById("pro").value;
+        //alert(product);
+        var total_price;
+        if(product=="Television")
+        {
+            
+        total_price = tv_price*quantity;
+        }
+         if(product=="Laptop")
+        {
+        total_price = laptop_price*quantity;
+        }
+        if(product=="Phone")
+        {
+        total_price = phone_price*quantity;
+        }
+         if(product=="Soap")
+        {
+        total_price = soap_price*quantity;
+        }
+        if (product=="Powder")
+        {
+        total_price = powder_price*quantity;
+        }
+        document.loandata.price.value= total_price;
+
+        tabid.style.display = "block";
+            }
+
+    }
+
+           
+        </script>
+    </head>
+<body style="background-color:rgb(176, 198, 230); text-align: center;">
+    <h2 align="center">Product Details:</h2>
+    <div style="text-align:center">
+    <form action="#"  name="loandata" method="dialog" style="border: solid white 10px; margin-left: 30%;width: 40%;" onsubmit="return check();">
+<table cellpadding="10">
+
+    <!-- document.myForm.price.value= total_price;
+    <tr>
+        <th>Total Price:</th>
+        <td><input type="number" name="price" id="price" size="10" disabled >
+        <div id='did4'></div>
+        </td>
+    </tr> -->
+
+
+
+    <tr>
+
+        <th>Category :</th>
+        <td> <select id="category" onchange="find();" > 
+            <option value="" disabled selected>Select an option</option>
+            <option value="elec">Electronics</option>
+            <option value="groc">Grocery</option>
+          </select>
+          <div id='cat'></div>
+          
+          
+        
+         </td>
+    </tr>
+
+    <tr>
+        
+        <th>Products :</th>
+        <td>
+            <div id='did1'>
+            <select >
+            <option>Select value</option>
+          </select>
+        </div>
+        
+         </td>
+    </tr>
+
+
+
+
+    <tr>
+        <th>Quantity:</th>
+        <td><input type="number" name="quantity" id="quantity" size="12" >
+        <div id='did3'></div>
+        </td>
+    </tr>
+    <br>
+    <tr>
+        <th>Total Price:</th>
+        <td><input type="number" name="price" id="price" size="10" disabled >
+        <div id='did4'></div>
+        </td>
+    </tr>
+    <tr><th colspan="2">
+        <button onclick="calculate()">Submit</button>
+        <div id='did'></div>
+        </th>
+        <th>
+        <input type="reset" value="Clear">
+        </th>
+    </tr>
+</table>
+<br>
+<hr>
+<br>
+
+
+    <div id='tabid' style="display: none;" >
+        <table border="1" align="center" cellpadding="10" style="margin-bottom: 10%;" >
+           
+                
+                
+                        <tr>
+                            <th>Category</th>
+                            <th>Product</th>
+                            <th>Price per quantity of product</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Electronics</td>
+                            <td>Television</td>
+                            <td>20000</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>Laptop</td>
+                            <td>30000</td>
+                        </tr>
+                        <tr>
+                           
+                            <td>Phone</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Grocery</td>
+                            <td>Soap</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>Powder</td>
+                            <td>90</td>
+                        </tr>
+                        </table>
+                        </div>
+
+
+   
+
+</form>
+</div>
+</body>
+</html>

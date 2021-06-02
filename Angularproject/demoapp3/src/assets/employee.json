@@ -1,0 +1,45 @@
+[
+{
+    "id": 1,
+    "name": "Rahul",
+    "salary": 9000,
+    "department": "JAVA"
+  },
+  {
+    "id": 2,
+    "name": "Vikash",
+    "salary": 11000,
+    "department": "ORAAPS"
+  },
+  {
+    "id": 3,
+    "name": "Uma",
+    "salary": 12000,
+    "department": "ORAAPS"
+  },
+  {
+    "id": 4,
+    "name": "Sachin",
+    "salary": 11500,
+    "department": "DotNet"
+  },
+  {
+    "id": 5,
+    "name": "Vishal",
+    "salary": 17000,
+    "department": "BI"
+  },
+  {
+    "id": 6,
+    "name": "Neelima",
+    "salary": 81000,
+    "department": "Testing"
+  },
+  {
+    "id": 6,
+    "name": "Daya",
+    "salary": 1000,
+    "department": "Testing"
+  }
+  
+]

@@ -1,0 +1,88 @@
+<HTML>
+
+    <HEAD>
+        <TITLE>New Browser Window</TITLE>
+        <script type="text/javascript">
+    
+            var myWindow;
+    
+            function openIt() {
+                var x = document.getElementById("width").value;
+                var y = document.getElementById("height").value;
+                var a = document.getElementById("left").value;
+                var b = document.getElementById("top").value;
+    
+                result = true;
+                var did1 = document.getElementById("did1");
+                did1.innerHTML = '';
+                var did2 = document.getElementById("did2");
+                did2.innerHTML = '';
+    
+                var test1 = document.getElementById("width").value;
+                if (test1 == '' || test1 == null) {
+                    did1.innerHTML = 'Width is missing...';
+                    result = false;
+                }
+    
+                var test2 = document.getElementById("height").value;
+                if (test2 == '' || test2 == null) {
+                    did2.innerHTML = 'Height is missing...';
+                    result = false;
+                }
+                if (result == true) {
+                    myWindow = open("", "", "width=100,height=100,top=0,left=0");
+                    myWindow.resizeTo(x, y);
+                    myWindow.moveTo(a, b);
+                    myWindow.focus();
+    
+                    myWindow.document.writeln("<html><head><title>fun</title></head><body>");
+                    myWindow.document.writeln("<table border='5' style= margin-left: '500px'; margin-top: '200px'; width:'x' ;height:'y'><tr><td>");
+                    myWindow.document.writeln("<h3>This window opned on clicking of the New Window button</h3>");
+                    myWindow.document.writeln("</tr></td></table></body></html>");
+                    myWindow.document.close();
+                    myWindow.focus();
+                }
+                else {
+                    return result
+                }
+            }
+        </script>
+    </head>
+    
+    <body>
+        <form method="dialog" action="#" onsubmit="return openIt();">
+            <table border="5" style="margin-left: 500px; margin-top: 200px;">
+                <tr>
+                    <th colspan="4">Create a new Window</th>
+                </tr>
+                <tr>
+                    <th colspan="4"> Window size </th>
+                </tr>
+                <tr>
+                    <th>width </th>
+                    <td><input type='text' id="width">
+                        <div id="did1"></div>
+                    </td>
+                    <th>height </th>
+                    <td><input type='text' id="height">
+                        <div id="did2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="4">Position</button></th>
+                </tr>
+                <tr>
+                    <th>left </th>
+                    <td><input type='text' id="left"></td>
+                    <th>top </th>
+                    <td><input type='text' id="top"></td>
+                </tr>
+                <tr>
+                    <th colspan="2"> <input type="button" value="Open new Window" onclick="openIt();" /></th>
+                    <th colspan="2"><input type="reset" value="Reset"></th>
+                </tr>
+            </table>
+        </form>
+    </body>
+    
+    </HTML>

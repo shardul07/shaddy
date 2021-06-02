@@ -1,0 +1,14 @@
+console.log("Hello, World!");
+function test()
+{
+  for(let i=0;i<5;i++)
+  console.log("i value is:"+i);
+}
+console.log("final:"+i);
+
+test();
+
+
+const message="Good Morning";
+message = "Good night";
+console.log(message);

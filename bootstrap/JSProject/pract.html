@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function payInfo() {
+                var div2 = document.getElementById('div2'); div2.innerHTML = '';
+                var amount = document.getElementById('amt').value;
+                var rint=document.getElementById('int').value;
+                var years=document.getElementById('years').value;
+                var interest=(amount*rint*years)/100;
+                var total=parseInt(amount)+parseInt(interest);
+                var mpay=total/12;
+                document.getElementById('mp').value=mpay;
+                document.getElementById('total').value=total;
+                document.getElementById('ti').value = interest;
+                
+                
+        }
+    </script>
+
+
+</head>
+<body>
+    <form action="#">
+        <h3><b>Enter loan info</b></h3>
+        1)Amount of the loan: <input type="text" id="amt" name="amt"> <br> <br>
+        2)Annual rate of interest: <input type="text" id="int" name="int"> <br> <br>
+        3)Repayment period in years: <input type="text" id="years" name="years">
+        <br> <br>
+        <button onclick="payInfo()">Compute</button>
+        <div id="div1">
+            <h3>Payment info:</h3>
+            4)monthly payment: <input type="text" id="mp" name="mp" disabled> <br> <br>
+            5)total payment will be: <input type="text" id="total" name="total" disabled> <br> <br>
+            6)total interest: <input type="text" id="ti" name="ti" disabled>
+        </div>
+        <div id="div2"></div>
+
+    </form>
+</body>
+</html>

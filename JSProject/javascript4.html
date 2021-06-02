@@ -1,0 +1,23 @@
+<HTML>
+    <HEAD>
+    <TITLE>Using typeof</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+      function factorial(){
+          var text1 = document.getElementById('t1').value;
+          var result=1;
+          for(var i=1; i<=text1; i++)
+              result=result*i;
+
+          //alert('Factorial is '+ result);
+          document.getElementById('did').innerHTML='<b>Factorial is '+ result+'</b>';
+      }
+      
+    </SCRIPT>
+    </HEAD>
+    <BODY>
+        Enter Number : <input type='text' name='t1' id='t1'>
+        <button onclick="factorial()">Calculate</button>
+        <div id='did'>---------</div>
+     
+    </BODY>
+    

@@ -1,0 +1,58 @@
+<HTML>
+    <HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+    <TITLE></TITLE>
+    <script language="javascript">
+        var myWindow;
+        function openIt(){
+     myWindow = open('','mywin','height=300,width=300,scrollbars=yes');
+     myWindow.document.writeln("<html><head><title>fun</title></head><body>");
+     myWindow.document.writeln("<table bgcolor='#ffcc66' border='1'width='600'><tr><td>");
+     myWindow.document.writeln("<h1>JavaScript Window Methods</h1><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />");
+     myWindow.document.writeln("</tr></td></table></body></html>");
+     myWindow.document.close();
+     myWindow.focus();
+    
+    }
+    
+    var int=self.setInterval("clock()",50)
+    function clock()
+    {
+  	var t=new Date()
+  	document.getElementById("clock").value=t
+    }
+
+    function timedMsg()
+    {
+	      setTimeout("alert('5 seconds!')",5000)
+    }
+
+        </script>
+    </HEAD>
+    <body>
+        <form name="testform" id="testform" action="#" method="get">
+
+            <input type="button" value="Open Window" onclick="openIt();" />
+            
+            <input type="button" value="Close Window" onclick="myWindow.close();" />
+            
+            <input type="button" value="Focus Window" onclick="if (myWindow)   myWindow.focus();" />
+            
+            <input type="button" value="Blur Window" onclick="if (myWindow) myWindow.blur();"/>
+
+            <input type="button" value="Confirm Window" onclick="window.confirm();" />
+
+            <input type="button" value="Prompt Window" onclick="window.prompt('Enter the number:');" />
+
+            </form>
+            
+            <hr>
+            <button onclick="window.clearInterval(int)">Stop interval</button>
+            <br>
+            <input type="text" id="clock" size="35" />
+            
+            <hr>
+            <input type="button" value="Display timed alertbox!" onClick="timedMsg()">
+    </BODY>
+    </HTML>
+    

@@ -1,0 +1,2 @@
+ng g c view--view component creation 
+ng g s dataservice--service layer creation

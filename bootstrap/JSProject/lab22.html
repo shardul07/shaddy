@@ -1,0 +1,28 @@
+<HTML>
+    <HEAD>
+    <TITLE>Calculate compound interest</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+        function compoundInterest(){
+            var p= document.getElementById('p').value;
+            var r=document.getElementById('r').value;
+            var t= document.getElementById('y').value;
+
+            var cmp= p * (Math.pow((1 + (r/(100* t))), (t)));
+            var a=cmp-p;
+           document.getElementById('did').innerHTML='Compund Interest -'+a+'<br>';
+        }
+      
+    </SCRIPT>
+    </HEAD>
+    <body>
+        <h4>Calculate Compound interest</h4>
+        Principle            - <input type="text" id="p"><br><br>
+        Rate Of Interest     - <input type="text" id="r"><br><br>
+        Period               - <input type="text" id="y"><br><br>
+        
+        <button onclick="compoundInterest()">Calculate</button><br><br>
+        <div id="did"></div>
+        
+        
+    </body>
+</HTML>

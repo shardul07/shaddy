@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function calculate()
+        {
+            var p = document.getElementById("p").value;
+            var n= document.getElementById("n").value;
+            var r= document.getElementById("r").value;
+            var result = document.getElementById("result").value;
+            result.innerHTML="The Interest is" + (p*n*r/100);
+        }
+        </script>
+    </head>
+    <body>
+       
+        <table>
+            <tr>
+                <th>Amount of the loan:</th>
+                <td><input type="text" id="p"></td>
+            </tr>
+            <tr>
+                <th>Annual percentage rate of interest:</th>
+                <td><input type="text" id="r"></td>
+            </tr>
+            <tr> 
+                <th>Repayment period in years:</th>
+                <td><input type="text" id="n"></td>
+            </tr>
+            <tr>
+                <th><button onclick="calculate()">Calculate</button></th>
+            </tr>
+        </table>
+        <div id="result"></div>
+    </body>
+</html>

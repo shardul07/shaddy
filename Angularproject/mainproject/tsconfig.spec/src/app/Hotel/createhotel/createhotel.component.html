@@ -1,0 +1,98 @@
+
+ <!-- <div class="container">
+  <form (ngSubmit)="savehotel()">
+      
+  <h1>Enter the Hotel Details</h1>
+      <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="hotelName" required [(ngModel)]="hotel.hotelName" name="hotelName">
+       </div>
+       <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" required [(ngModel)]="hotel.city" name="city">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" required [(ngModel)]="hotel.address" name="address">
+        </div>
+        <div class="form-group">
+          <label for="description">Hotel Description</label>
+          <input type="text" class="form-control" id="description" required [(ngModel)]="hotel.description" name="description">
+        </div>
+        <div class="form-group">
+          <label for="avgRatePerDay">Average Rate Per Day</label>
+          <input type="text" class="form-control" id="avgRatePerDay" required [(ngModel)]="hotel.avgRatePerDay" name="avgRatePerDay">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" required [(ngModel)]="hotel.email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="phone1">Phone1:</label>
+          <input type="text" class="form-control" id="phone1" required [(ngModel)]="hotel.phone1" name="phone1">
+        </div>
+        <div class="form-group">
+          <label for="phone2">Phone2:</label>
+          <input type="text" class="form-control" id="phone2" required [(ngModel)]="hotel.phone2" name="phone2">
+        </div>
+        <div class="form-group">
+          <label for="website">Website:</label>
+          <input type="text" class="form-control" id="website" required [(ngModel)]="hotel.website" name="website">
+        </div>  
+      <button type="submit" style="background-color: green;">Submit</button>
+    </form>
+    </div> -->
+   
+
+    <div class="col-md-6 user-container">
+  <h1>Enter the Hotel Details</h1>
+  <form  [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="name"> Hotel Name</label>
+          <input  formControlName="name" type="text" class="form-control"  [(ngModel)]="hotel.hotelName" id="name"  name="name">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.name.errors">Give Hotel Name</div>
+       </div>
+       <div class="form-group">
+          <label for="city">City</label>
+          <input formControlName="city" type="text" class="form-control" [(ngModel)]="hotel.city" id="city" name="city">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.city.errors">Give City Name</div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input formControlName="address" type="text" class="form-control" id="address"  [(ngModel)]="hotel.address" name="address">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.address.errors">Give Address</div>
+        </div>
+        <div class="form-group">
+          <label for="description">Hotel Description</label>
+          <input formControlName="description" type="text" class="form-control" id="description"  [(ngModel)]="hotel.description" name="description">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.description.errors">Enter about Hotel</div>
+        </div>
+        <div class="form-group">
+          <label for="avgRatePerDay">Average Rate Per Day</label>
+          <input formControlName="avgRatePerDay" type="text" class="form-control" id="avgRatePerDay"  [(ngModel)]="hotel.avgRatePerDay" name="avgRatePerDay">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.avgRatePerDay.errors">Enter Average rate per Day</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input  formControlName="email" type="text" class="form-control" id="email"  [(ngModel)]="hotel.email" name="email">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.email.errors">Enter Email</div>
+        </div>
+        <div class="form-group">
+          <label for="phone1">Phone1:</label>
+          <input formControlName="phone1" type="text" class="form-control" id="phone1"  [(ngModel)]="hotel.phone1" name="phone1">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.phone1.errors">Enter Phone Number</div>
+        </div>
+        <div class="form-group">
+          <label for="phone2">Phone2:</label>
+          <input formControlName="phone2" type="text" class="form-control"  [(ngModel)]="hotel.phone2"  id="phone2" name="phone2">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.phone2.errors">Enter Phone Number 2</div>
+        </div>
+        <div class="form-group">
+          <label for="website">Website:</label>
+          <input formControlName="website" type="text" class="form-control" id="website"   [(ngModel)]="hotel.website" name="website">
+          <div class="text-danger" *ngIf=" Submitted && addForm.controls.website.errors">Enter the Website Name</div>
+        </div>  
+      <button tclass="btn btn-success" style="background-color: green;">Submit</button>
+    </form>
+    </div>
+   

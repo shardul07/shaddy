@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function valid(){
+                var result=true;
+                var did1 = document.getElementById('did1');  did1.innerHTML='';
+                var did2 = document.getElementById('did2');  did2.innerHTML='';
+                var did3 = document.getElementById('did3');  did3.innerHTML='';
+                var did4 = document.getElementById('did4');  did4.innerHTML='';
+                var did5 = document.getElementById('did5');  did5.innerHTML='';
+
+                var uname = document.getElementById('uname').value;
+                if(uname=='' || uname==null){
+                    did1.innerHTML='UserId  is missing...';
+                    result =false;
+                }
+              
+                var pwd = document.getElementById('pwd').value;
+                if(pwd=='' || pwd==null){
+                    did2.innerHTML='Pwd  is missing...';
+                    result =false;
+                }
+                
+                var i=-1;
+                for(i=0;i<document.myForm.gender.length;i++){
+			         if(document.myForm.gender[i].checked){
+				          break;
+                     }
+			    }
+		        if(i==document.myForm.gender.length){
+                    did3.innerHTML='Gender  is missing...'; 
+                    result =false;
+                }
+
+                var location = document.getElementById('location').value;
+                if(location==-1){
+                    did4.innerHTML='Location  is missing...';
+                    result =false;
+                }
+
+                var terms = document.getElementById('terms').checked;
+                if(terms==false){
+                    did5.innerHTML='Agreement  is missing...';
+                    result =false;
+                }
+
+                return result;
+            }
+        </script>
+    </head>
+<body style="background-color:powderblue";>
+<form method="" action="abc.html" name="myForm" onsubmit="return valid();" >
+<table>
+    <tr>
+        <th>UserId :*</th>
+        <td><input type="text" name="uname" id="uname" size="20" >
+        <div id='did1'></div>
+        </td>
+    </tr>
+    <tr>
+        <th>Password :</th>
+        <td><input type="password" name="pwd" id="pwd" size="10" >
+        <div id='did2'></div>
+        </td>
+    </tr>
+    
+    <tr>
+        <th>Gender :</th>
+        <td><input type="radio" name="gender" id="gender" value="Male" >Male
+            <input type="radio" name="gender" id="gender" value="Female" >Female
+            <input type="radio" name="gender" id="gender" value="Others" >Others
+        <div id='did3'></div>
+        </td>
+    </tr>
+
+    <tr>
+        <th>Choose Your Location :</th>
+        <td><select name="location" id="location" >
+        <option value="-1">--------</option>
+        <option value="KOL">Kolkata</option>
+        <option value="MUM">Mumbai</option>
+        <option value="GOA">Goa</option>
+        <option value="PUN">Punjab</option>
+        </select>
+        <div id='did4'></div>
+         </td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="checkbox" name="terms" id="terms" value="1" >I agree with all termns and conditions
+        <div id='did5'></div>    </td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <input type="submit" value="Submit Now">
+        <input type="reset" value="Clear">
+    </th>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>
+

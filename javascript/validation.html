@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head><script>
+    function valid(){
+                var result=true;
+                var did1 = document.getElementById('did1');  did1.innerHTML='';
+                var did2 = document.getElementById('did2');  did2.innerHTML='';
+                var uname = document.getElementById('uname').value;
+                if(uname=='' || uname.length()==0){
+                    did1.innerHTML='UserId  is missing...';
+                    result =false;
+                }
+                var pwd = document
+ 
+                return result;
+            }
+</script></head>
+<body style="background-color:powderblue";>
+<form method="post" action="abc.html" name="myForm" onsubmit="return valid()">
+<table>
+    <tr>
+        <th>UserId :</th>
+        <td><input type="text" name="uname" id="uname" size="20" >
+            <div id='did1'></div></td>
+    
+    </tr>
+    <tr>
+        <th>Password :</th>
+        <td><input type="password" name="pwd" id="pwd" size="10" >
+            <div id='did2'></div></td>
+    </tr>
+    <tr>
+        <th>Contact Number :</th>
+        <td><input type="tel" name="phone" id="phone" size="15" ></td>
+    </tr>
+    <tr>
+        <th>Date Of Birth :</th>
+        <td><input type="date" name="dob" id="dob" size="15" ></td>
+    </tr>
+    <tr>
+        <th>Gender :</th>
+        <td><input type="radio" name="gender" id="gender" value="Male" >Male
+            <input type="radio" name="gender" id="gender" value="Female" >Female
+            <input type="radio" name="gender" id="gender" value="Others" >Others</td>
+    </tr>
+    <tr>
+        <th>Language Known :</th>
+        <td><input type="checkbox" name="eng" id="eng" value="English" >English
+            <input type="checkbox" name="hindi" id="hindi" value="Hindi" >Hindi
+            <input type="checkbox" name="beng" id="beng" value="Bengali" >Bengali</td>
+    </tr>
+    <tr>
+        <th>Give your feedback :</th>
+        <td><textarea name="remark" id="remark" rows="3" cols="20" >
+            </textarea> </td>
+    </tr>
+    <tr>
+        <th>Upload Resume :</th>
+        <td><input type="file" name="resume" id="resume" > </td>
+    </tr>
+    <tr>
+        <th>Choose Your Location :</th>
+        <td><select name="location" id="location" >
+        <option value="KOL">Kolkata</option>
+        <option value="MUM">Mumbai</option>
+        <option value="GOA">Goa</option>
+        <option value="PUN">Punjab</option>
+        </select>
+         </td>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <input type="submit" value="Submit Now">
+        <input type="reset" value="Clear">
+    </th>
+    </tr>
+</table>
+</form>
+
+ 
+
+</body>
+</html>

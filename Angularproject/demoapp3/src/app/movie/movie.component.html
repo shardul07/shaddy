@@ -1,0 +1,68 @@
+<div class="container">    
+    <div class="col-md-6 user-container">
+      <h2 class="text-center">Movie World</h2>
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    
+        <div class="form-group">
+          <label for="id">Movie ID:</label>
+          <input type='text' formControlName="id" placeholder="Enter Id" name="id" class="form-control" id="id">
+       <div *ngIf=" Submitted && addForm.controls.id.errors">Provide ID </div> </div>
+           
+       <div class="form-group">
+        <label for="name">Movie Name:</label>
+        <input type="text" formControlName="name" class="form-control"  placeholder="name" />
+        <div *ngIf="Submitted && addForm.controls.name.invalid" >Provide Name</div></div>
+    
+            <div class="form-group">
+              <label for="category">Genre:</label>
+              <select class="form-control"  formControlName="category"  id="category" required>
+                  <option *ngFor="let c of category" [value]="c" >{{c}}</option>
+                </select>
+            <div *ngIf=" Submitted && addForm.controls.category.errors">Select Genre</div>
+            </div>
+    
+            <div class="form-group">
+              <label for="rating">Rating:</label>
+              <input type="text" class="form-control" formControlName="rating" name="rating"  id="rating">
+            <div *ngIf=" Submitted && addForm.controls.rating.errors">Provide Rating</div></div>
+    
+        <button class="btn btn-success">Add Movie</button>
+      </form>
+    </div>
+    </div>
+    
+    <h3 align='center'>Movie Details</h3>
+    <div class="container">    
+     
+      <form (ngSubmit)="getallmovie()">
+        <div class="form-group">
+        <label for="category">Genre:</label>
+        <select name ='category'    id="category" [(ngModel)]="type1">
+          <option *ngFor="let c of category" [value]="c" >{{c}}</option>
+        </select>
+          </div>
+        <div class="form-group">
+          <button class="btn btn-success">Search</button>
+      
+       </div> 
+       </form>
+       
+      <table class="table" border="3" align="center">
+        <tr>
+          <th> ID</th>
+          <th> Name</th>
+          <th>Category</th>
+          <th>rating</th>
+        </tr>
+        <tr *ngFor="let m of movies">
+          <td>{{m.id}}</td>
+          <td>{{m.name}}</td>
+          <td>{{m.category}}</td>
+          <td>{{m.rating}}</td>
+        </tr>
+      </table>
+      
+      
+      
+     
+    </div>

@@ -1,0 +1,21 @@
+<p>lab2 works!</p>
+<div class="container">
+<table class="table table-bordered" *ngIf='employees'>
+    <thead>
+    <tr>
+        
+        <th>ID</th>
+        <th><a class="Link" (click)="sortedColumn">Name</a></th>
+        <th>Salary</th>
+        <th>Department</th>
+    </tr>
+    </thead>
+         <tr *ngFor="let employee of employees | sort: sortedColumn">  
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.department}}</td>
+            </tr>
+        </table>
+    </div>
+      

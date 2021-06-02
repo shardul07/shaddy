@@ -1,0 +1,33 @@
+<HTML>
+    <HEAD>
+    <TITLE>Using typeof</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+      function findString(){
+          var str = document.getElementById('t1').value;
+          var char=document.getElementById('t2').value;
+          var pos=parseInt(str.indexOf(char));
+          document.write("The Actual String is  - "+str+"<br><br>");
+          document.write("The Characrter to be  searched for  is  - "+char+"<br><br>");
+          document.write("The Character is found at the index  - "+pos);
+      }
+      
+    </SCRIPT>
+    </HEAD>
+    <BODY>
+    
+        <form >
+        <table>
+     <tr>
+        <th>Enter the String</th>
+        <td><input type='String' name='t1' id='t1'></td>
+    </tr>
+    <tr>
+        <th>Enter the character to be searched </th>
+        <td><input type='char' name='t2' id='t2'></td>
+    </tr>
+    <tr><th>
+        <button onclick="findString()">Search</button>
+    </th>
+</tr>
+    </BODY>
+</HTML>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+    <SCRIPT LANGUAGE="JavaScript">
+        function calculate(){
+            var payid = document.getElementById('payid');  
+            payid.style.display = "none";
+
+            var result=valid();
+            if(result==true){
+            var principle = document.getElementById('currency').value;
+            var amountinterest = document.getElementById('interest').value;
+            var time = document.getElementById('period').value;
+            var si;
+            si=(principle*amountinterest*(time*12))/100;//6)total interest
+            // document.getElementById('did6').innerHTML=si;
+            document.loandata.monthlyamt.value=si;
+            var tot=parseInt(si)+parseInt(principle)//5)total payment
+            // document.getElementById('did5').innerHTML=tot;
+            document.loandata.totalamt.value=tot;
+            var monthamount=si/(time*12);//4)monthly amount
+            // document.getElementById('did4').innerHTML=monthamount;
+            document.loandata.totint.value=monthamount;
+
+            
+            payid.style.display = "block";
+
+            }
+        }
+        
+        function valid(){
+            var result=true;
+            var did1 = document.getElementById('did1');  did1.innerHTML='';
+            var did2 = document.getElementById('did2');  did2.innerHTML='';
+            var did3 = document.getElementById('did3');  did3.innerHTML='';
+            
+
+            var currency = document.getElementById('currency').value;
+            if(currency=='' || currency==null){
+                did1.innerHTML='currency  is missing...';
+                result =false;
+            }
+            else if(currency>1500000||currency<1){
+                did1.innerHTML='currency should be b/w 0-15000000';
+                result=false;
+            }
+          
+            var interest = document.getElementById('interest').value;
+            if(interest=='' || interest==null){
+                did2.innerHTML='interest  is missing...';
+                result =false;
+            }
+           
+            
+            var period = document.getElementById('period').value;
+            if(period=='' || period==null){
+                did3.innerHTML='period  is missing...';
+                result =false;
+            }
+            else if(period<7||period>15){
+                did3.innerHTML='enter period between 7-15years';
+                result=false;
+            }
+           
+            return result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Loan Information:</h2>
+    <div style="border:10rem;">
+    <form action="#" name="loandata" method="dialog">
+        <table>
+          
+            <tr>
+               
+                <th>1)Amount of the loan(any currency)</th>
+                <td><input type="number" name="currency" id="currency" size="20" >
+                <div id='did1'></div>
+                </td>
+            </tr>
+            <tr>
+            
+                <th>2)Annual percentage rate of interest:</th>
+                <td><input type="number" name="interest" id="interest" size="10" >
+                <div id='did2'></div>
+                </td>
+            </tr>
+            <tr>
+                <th>3)Repayment period in years:</th>
+                <td><input type="number" name="period" id="period" size="10" >
+                <div id='did3'></div>
+                </td>
+            </tr>
+            <tr><th>
+                <button onclick="calculate()">Compute</button>
+                <div id='did'></div>
+                </th>
+            </tr>
+            
+            </table>
+        </div>
+            <div id='payid' style="display: none;" >
+            <table>
+               
+                    <h2>Payment Information</h2>
+                    
+                            <tr>
+                                <th>4)Your monthly payment will be:</th>
+                                <td><input type="number" name="monthlyamt" size="20" disabled></td>
+                                <td><div id='did4'></div></td>
+                            </tr>
+                            <tr>
+                                <th>5)Your total payment will be:</th>
+                                <td><input type="number" name="totalamt" size="20" disabled></td>
+                                <td><div id='did5'></div></td>
+                            </tr>
+                            <tr>
+                                <th>6)Your total interest payments will be:</th>
+                                <td><input type="number" name="totint" size="20" disabled></td>
+                                <td><div id='did6'></div></td>
+                            </tr>
+                            
+            </table>
+        </div>
+            </form>
+            
+</body>
+</html>

@@ -1,0 +1,89 @@
+<p>createbooking works!</p>
+Add booking details
+
+
+
+<div class="col-md user-container">
+        <h2 class="text-center">ADD Booking Details</h2>
+        <form [formGroup]="addForm" (ngSubmit)="onSubmitforAdd()">
+            <div class="form-group">
+                <label for="bookingId">Booking ID:</label>
+                <input formControlName="bookingId" [(ngModel)]="addBooking.bookingId" placeholder="Enter BookingId"
+                    name="bookingId" class="form-control" id="bookingId" />
+                 <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookingId.errors">give Booking id</div>
+            </div>
+
+            <!-- <input matInput [matDatepicker]="picker" type="text" name="dob"  class="form-control"
+                (focus)="picker.open()"  placeholder="Enter Date of Birth"  />
+            <mat-datepicker #picker></mat-datepicker> -->
+            <!-- <div class="form-group">
+                <label for="bookedFrom">Booking From:</label>
+                <input matInput [matDatepicker]="picker" type="text" name="dob" class="form-control" (focus)="picker.open()"
+                    placeholder="Enter Date of Birth" />
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookedFrom.errors">Enter from date</div>
+            </div> -->
+
+            
+            
+            
+            
+            <div class="form-group">
+                <label for="bookedFrom">Booking From:</label>
+                <input formControlName="bookedFrom" [(ngModel)]="addBooking.bookedFrom" placeholder="Enter from date"
+                    name="bookedfrom" class="form-control" id="bookedfrom" />
+                <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookedFrom.errors">Enter from date</div>
+            </div>
+            <div class="form-group">
+                <label for="bookedTo">Booked To:</label>
+                <input formControlName="bookedTo" [(ngModel)]="addBooking.bookedTo" placeholder="Enter to date"
+                    name="bookedto" class="form-control" id="bookedto" />
+                <div class="text-danger" *ngIf=" Submitted && addForm.controls.bookedTo.errors">Enter to date </div>
+            </div>
+            <div class="form-group">
+                <label for="noOfAdults">No Of Adults:</label>
+                <input formControlName="noOfAdults" [(ngModel)]="addBooking.noOfAdults" placeholder="Enter no Of Adults"
+                    name="noOfAdults" class="form-control" id="noOfAdults" />
+                <div class="text-danger" *ngIf=" Submitted && addForm.controls.noOfAdults.errors">Enter no Of Adults</div>
+            </div>
+            <div class="form-group">
+                <label for="totalAmount">totalAmount:</label>
+                <input formControlName="totalAmount" [(ngModel)]="addBooking.totalamount" placeholder="Enter no Of Adults"
+                    name="totalAmount" class="form-control" id="totalAmount" />
+                <div class="text-danger" *ngIf=" Submitted && addForm.controls.totalAmount.errors">Enter amount</div>
+            </div>
+            <div class="form-group">
+                <label for="noOfChildren">No Of Children:</label>
+                <input formControlName="noOfChildren" [(ngModel)]="addBooking.noOfChildren"
+                    placeholder="Enter no Of Children" name="noOfChildren" class="form-control" id="noOfChildren" />
+                <div class="text-danger" *ngIf=" Submitted && addForm.controls.noOfChildren.errors">Enter no Of Children
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hotelId">Hotel Id:</label>
+                <input formControlName="hotelId" [(ngModel)]="addBooking.hotelId" name="hotelId" class="form-control"
+                    id="hotelId" /> 
+     <div *ngIf=" Submitted && addForm.controls.hotelId.errors">Give hotel id</div> 
+    </div>
+            <div class="form-group">
+                <label for="roomId">Room Id:</label>
+                <input formControlName="roomId" [(ngModel)]="addBooking.roomId" name="roomId" class="form-control"
+                    id="roomId" />
+                 <div *ngIf=" Submitted && addForm.controls.roomId.errors">Give RoomId</div>
+            </div>
+            <div class="form-group">
+                <label for="hotelName">Hotel Name:</label>
+                <select name="hotelName" id="hotelName" formControlName="hotelName">
+                    <option *ngFor="let hname of hotelNameList" value="hname">{{hname}}</option>
+                </select>
+                <div *ngIf=" Submitted && addForm.controls.hotelName.errors">Give RoomId</div>
+            </div>
+            <div class="form-group">
+                <label for="userId">user Id:</label>
+                <input  formControlName="userId" name="userId" class="form-control" id="userId"  />
+                <!-- <div *ngIf=" Submitted && addForm.controls.userId.errors">Give userId</div> -->
+            </div>
+            <button class="btn btn-success">Add Data</button>
+        </form>
+    </div>  

@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+h1
+{
+    text-align: center;
+}
+
+@media(max-width:768px) {
+  
+    footer{
+        text-align:left;
+    }
+  }
+  footer {
+    padding: 10px 0;
+    background-color: #101010;
+    color:#9d9d9d;
+    bottom: 0;
+    width: 100%;
+  }
+  .thumbnail img 
+  {
+    height:250px;
+    width:100%;
+  }
+  .thumbnail
+  {
+    border: 0px solid grey;
+  }
+  
+  .image.rounded-corners
+  {
+    border-radius: 5px;
+  }
+  
+  * {box-sizing: border-box;}
+  
+  .thumbnail {
+    position: relative;
+    
+  }
+  
+  .image {
+    display: block;
+    
+  }
+  
+  .overlay {
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    width: 99.9%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;margin-bottom: 1%;
+  }
+  
+  .thumbnail:hover .overlay {
+    opacity: 1;
+  }
+  h2
+  {
+    font-family: sans-serif;
+  }

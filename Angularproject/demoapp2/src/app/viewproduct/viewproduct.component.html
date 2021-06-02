@@ -1,0 +1,21 @@
+<p>viewproduct works!</p>
+<div *ngFor="let p of products " style="width: 300px;">
+    <div *ngIf="p">
+      <div>
+        <label>Id: </label> {{p.pid}}
+      </div>
+      <div>
+        <label>Name: </label> {{p.pname}}
+      </div>
+      <div>
+        <label>Price: </label> {{p.price}}
+      </div>
+      <div>
+        <button (click)='remove(p.pid)'>Delete</button>
+        <button (click)='detail(p.pid)'>detail</button>
+        <button (click)='detail(p.pid)'>Edit</button>
+      </div>
+    <hr/>
+  </div>
+</div>
+

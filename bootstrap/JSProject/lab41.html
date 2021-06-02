@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Arrays!!!</title>
+	<script type="text/javascript">
+		var employee = new Array("John", "Ann", "Aaron", "Edwin", "Elizabeth");
+		Array.prototype.displayItems=function(){
+			for (i=0;i<this.length;i++){
+				document.write(i+1+"."+this[i] + "<br />");
+			}
+		}	
+		document.write("List of Employees<br/>");
+        document.write("---------------<br/>")
+		employee.displayItems();
+		
+		
+	</script>
+</head>
+<body>
+</body>
+</html>
